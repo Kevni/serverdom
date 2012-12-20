@@ -1,0 +1,20 @@
+[
+	["html", [
+			["head", [
+					["title", "Mein Test"]
+				]
+			],
+			["body", [
+					["span", [
+							"Hallo Welt!"
+						], {
+							"style": "color:lime;"
+						}
+					]
+				], {
+					"style": "background-color:black;"
+				}
+			]
+		]
+	]
+]
