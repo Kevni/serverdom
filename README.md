@@ -7,14 +7,11 @@ per Websocket nachlädt. Grundgerüst soll dabei ein DOM sein der zwischen Clien
 Beispiele
 =========
 ```javascript
-var DOM = require('serverdom');
-var el = new DOM.Element('span', {
-  content: ["Hallo", DOM.Element.BR(), "Welt!"],
-  attr: {style: "color:red;"}
-});
+var E = require('serverdom').Element;
+var el = E('span', ["Hello", E.BR(), 'World!'], {style: 'color:red;'});
 console.log(el.toString());
 ```
 Ausgabe: 
 ```html
-<span style="color:red;">Hallo<br />Welt!</span></code>
+<span style="color:red;">Hallo<br />Welt!</span>
 ```
