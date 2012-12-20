@@ -14,4 +14,7 @@ var el = new DOM.Element('span', {
 });
 console.log(el.toString());
 ```
-Ausgabe: <span style="color:red;">Hallo<br />Welt!</span>
+Ausgabe: 
+```html
+<span style="color:red;">Hallo<br />Welt!</span></code>
+```
