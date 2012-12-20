@@ -6,7 +6,7 @@ per Websocket nachlädt. Grundgerüst soll dabei ein DOM sein der zwischen Clien
 
 Beispiele
 =========
-```html
+```javascript
 var DOM = require('serverdom');
 var el = new DOM.Element('span', {
   content: ["Hallo", DOM.Element.BR(), "Welt!"],
