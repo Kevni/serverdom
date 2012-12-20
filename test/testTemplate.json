@@ -1,0 +1,17 @@
+[
+   {"tag": "html", "content": [
+      {"tag": "head", "content": [
+         {"tag": "title", "content": ["Meine Website"]},
+         {"tag": "script", "attr": {"src": "http://jquery.com"}}
+      ]},
+      {"tag": "body", "content": [
+         {"tag": "span", "content": [
+            "Hallo",
+            {"tag": "br"},
+            "Welt!",
+            {"tag": "hr"},
+            "Footer"
+         ]}
+      ]}
+   ]}
+]
