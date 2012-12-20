@@ -1,6 +1,5 @@
-var DOM = require('../index');
+var E = require('../index').Element;
 
-var el = new DOM.Element("span", ["Hallo Welt", DOM.Element.BR(),"Wie gehts dir?", DOM.Element.A("http://jquery.com", "Jquery")]);
-
-
-console.log(el.toString());
+var example = E('span', ["Hello", E.BR(), 'World!'], {style: 'color:red;'});
+		
+console.log(example.toString());
