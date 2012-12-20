@@ -75,7 +75,8 @@ var E = DOM.Element;
 	var el = DOM.Load("./testTemplate.json", true);
 	Assert.strictEqual(el.toString(), 
 				"<html><head><title>Meine Website</title><script src=\"http://jquery.com\" />"
-			+	"</head><body><span>Hallo<br />Welt!<hr />Footer</span></body></html>");
+			+	"</head><body><span style=\"color:red;\">Hallo<br />Welt!<hr />Footer</span>"
+			+	"</body></html>");
 	
 	//Load content to element
 	el = E("html");
