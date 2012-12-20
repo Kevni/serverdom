@@ -37,5 +37,7 @@ Als Template-Datei:
 ```
 Ausgabe: 
 ```html
-<span style="color:red;">Hallo<br />Welt!</span>
+<body>
+	<span style="color:red;">Hallo<br />Welt!</span>
+</body>
 ```
