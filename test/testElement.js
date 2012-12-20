@@ -1,5 +1,6 @@
 var Assert = require('assert');
 var DOM = require('../index');
+var E = DOM.Element;
 
 //Check if BR factory works correctly
 (function() {
@@ -9,62 +10,62 @@ var DOM = require('../index');
 
 //Check if create a simple empty element works
 (function() {
-	var el = new DOM.Element('div');
+	var el = E('div');
 	Assert.strictEqual(el.toString(), "<div></div>");
 })();
 
 //Check if create a element with string content works
 (function() {
 	//A simple string
-	var el = new DOM.Element('div', ["aaa"]);
+	var el = E('div', ["aaa"]);
 	Assert.strictEqual(el.toString(), "<div>aaa</div>");
 	
 	//More than one string
-	el = new DOM.Element('div', ["aaa", "bbb", "ccc"]);
+	el = E('div', ["aaa", "bbb", "ccc"]);
 	Assert.strictEqual(el.toString(), "<div>aaabbbccc</div>");
 	
 	//Strings with elements (from factory)
-	el = new DOM.Element('div', ["aaa", DOM.Element.BR(), "ccc"]);
+	el = E('div', ["aaa", DOM.Element.BR(), "ccc"]);
 	Assert.strictEqual(el.toString(), "<div>aaa<br />ccc</div>");
 	
 	//Strings with elements (manuell created)
-	el = new DOM.Element('div', ["aaa", new DOM.Element('span', ["bbb"]), "ccc"]);
+	el = E('div', ["aaa", E('span', ["bbb"]), "ccc"]);
 	Assert.strictEqual(el.toString(), "<div>aaa<span>bbb</span>ccc</div>");
 })();
 
 //Check if create a element with attributes works
 (function() {
 	//One Attributes
-	var el = new DOM.Element('a', {href: "google.de"});
+	var el = E('a', {href: "google.de"});
 	Assert.strictEqual(el.toString(), "<a href=\"google.de\"></a>");
 	
-	el = new DOM.Element('a', {href: "google.de", color: "blue", size:"15"});
+	el = E('a', {href: "google.de", color: "blue", size:"15"});
 	Assert.strictEqual(el.toString(), "<a href=\"google.de\" color=\"blue\" size=\"15\"></a>");
 })();
 
 //Check if the order of parameters correctly
 (function() {
 	//STRING content
-	var el = new DOM.Element('a', "Google");
+	var el = E('a', "Google");
 	Assert.strictEqual(el.toString(), "<a>Google</a>");
 	
 	//ARRAY content
-	el = new DOM.Element('a', ["Google"]);
+	el = E('a', ["Google"]);
 	Assert.strictEqual(el.toString(), "<a>Google</a>");
 	
 	//ARRAY with more values content
-	el = new DOM.Element('a', ["Google", "Mail"]);
+	el = E('a', ["Google", "Mail"]);
 	Assert.strictEqual(el.toString(), "<a>GoogleMail</a>");
 	
 	//ATTRIBUTES without content
-	el = new DOM.Element('a', {href: "http://google.de"});
+	el = E('a', {href: "http://google.de"});
 	Assert.strictEqual(el.toString(), "<a href=\"http://google.de\"></a>");
 	
 	//ATTRIBUTES with content
-	el = new DOM.Element('a', "Google", {href: "http://google.de"});
+	el = E('a', "Google", {href: "http://google.de"});
 	Assert.strictEqual(el.toString(), "<a href=\"http://google.de\">Google</a>");
 	
-	el = new DOM.Element('a', ["Google", "Mail"], {href: "http://mail.google.de"});
+	el = E('a', ["Google", "Mail"], {href: "http://mail.google.de"});
 	Assert.strictEqual(el.toString(), "<a href=\"http://mail.google.de\">GoogleMail</a>");
 })();
 
@@ -77,7 +78,8 @@ var DOM = require('../index');
 			+	"</head><body><span>Hallo<br />Welt!<hr />Footer</span></body></html>");
 	
 	//Load content to element
-	el = new DOM.Element("html");
+	el = E("html");
+	
 	el = DOM.Load("./testBody.json", el);
 	Assert.strictEqual(el.toString(), 
 				"<html><body><span>Hallo Welt!</span></body></html>");
